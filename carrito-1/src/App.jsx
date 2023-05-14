@@ -6,16 +6,21 @@ import {
   BrowserRouter as Router,
   Route
 } from "react-router-dom";
+import {DataProvider} from "./context/DataProvider.jsx"
+import Carrito from './components/Carrito/Carrito.jsx';
 
 
 function App() {
   return (
-    <div className='App'>
-      <Router>
-        <Header/>
-        <Paginas/>
-      </Router>
-    </div>
+    <DataProvider>
+      <div className='App'>
+        <Router>
+          <Header/>
+          <Carrito/>
+          <Paginas/>
+        </Router>
+      </div>
+    </DataProvider>
   )
 }
 
